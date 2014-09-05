@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/moutoku1984/VirtualBox VMs/CentOS2_default_1389529948/Logs'
+let g:netrw_dirhist_2='/Users/moutoku1984/VirtualBox VMs/CentOS'
+let g:netrw_dirhist_3='/Users/moutoku1984/dotfiles/.oh-my-zsh'
+let g:netrw_dirhist_4='/Users/moutoku1984/Develop/rails/rails_projects/sample_app'
+let g:netrw_dirhist_5='/Users/moutoku1984/Develop/rails/rails_projects/sample_app/app/views/users'
