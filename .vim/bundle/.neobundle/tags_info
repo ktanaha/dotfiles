@@ -11,6 +11,7 @@ scss-syntax.vim
 vim-css3-syntax
 vim-html5validator
 vim-markdown
+vim-multiple-cursors
 vim-quickrun
 vimproc
 vimshell

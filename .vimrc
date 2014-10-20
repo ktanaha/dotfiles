@@ -86,7 +86,7 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
-"NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim'
 "コード入力補完
 NeoBundle 'Shougo/neocomplcache'
 "スニペット機能
@@ -105,6 +105,21 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 "複数カーソル
 NeoBundle 'terryma/vim-multiple-cursors'
+"RAILS用
+NeoBundle 'tpope/vim-rails', { 'autoload' : {
+      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
+NeoBundleLazy 'basyura/unite-rails', {
+      \ 'depends' : 'Shougo/unite.vim',
+      \ 'autoload' : {
+      \   'unite_sources' : [
+      \     'rails/bundle', 'rails/bundled_gem', 'rails/config',
+      \     'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
+      \     'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
+      \     'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
+      \     'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/schema', 'rails/spec',
+      \     'rails/stylesheet', 'rails/view'
+      \   ]
+      \ }}
 
 "NERDTree用の設定
 let file_name = expand("%:p")
