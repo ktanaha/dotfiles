@@ -30,7 +30,19 @@ set autoindent
 "バックアップファイルのディレクトリを指定する
 set backupdir=$HOME/vimbackup
  
-"クリップボードをWindowsと連携する
+" 不可視文字を表示
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+
+" インデントをshiftwidthの倍数に丸める
+set shiftround
+
+" 補完の際の大文字小文字の区別しない
+set infercase
+
+" 文字がない場所にもカーソルを移動できるようにする
+set virtualedit=all
+
+" クリップボードをWindowsと連携する
 set clipboard=unnamed
   
 "スワップファイル用のディレクトリを指定する
@@ -38,6 +50,15 @@ set directory=$HOME/vimbackup
 
 "長い文章を切り返さない
 set nowrap
+
+" 対応括弧に<と>のペアを追加
+set matchpairs& matchpairs+=<:>
+
+" 対応括弧をハイライト表示する
+set showmatch
+
+" 対応括弧の表示秒数を3秒にする
+set matchtime=3
 
 "タブの代わりに空白文字を指定する
 set expandtab
@@ -70,7 +91,9 @@ filetype off
 "-------------------------------------------------------
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
 endif
 
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -120,6 +143,9 @@ NeoBundleLazy 'basyura/unite-rails', {
       \     'rails/stylesheet', 'rails/view'
       \   ]
       \ }}
+
+NeoBundle 'tpope/vim-endwise.git' " if...endなど対応するキーワードの自動補完
+NeoBundle 'ruby-matchit'  " %を拡張して、def...end等のキーワードを移動出来るようにする。
 
 "NERDTree用の設定
 let file_name = expand("%:p")

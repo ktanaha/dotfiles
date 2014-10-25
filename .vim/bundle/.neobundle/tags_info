@@ -7,11 +7,16 @@ neosnippet
 neosnippet-snippets
 nerdtree
 open-browser.vim
+ruby-matchit
 scss-syntax.vim
+unite-rails
+unite.vim
 vim-css3-syntax
+vim-endwise
 vim-html5validator
 vim-markdown
 vim-multiple-cursors
 vim-quickrun
+vim-rails
 vimproc
 vimshell
