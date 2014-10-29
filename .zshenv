@@ -6,7 +6,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Android SDK
 export ANDOIRD_HOME=/usr/local/opt/android-sdu
 
-### zsh_fucntion
-export FPATH=/usr/local/share/zsh/functions/:$PATH
-
 alias mvi="mvim --remote-tab-silent"

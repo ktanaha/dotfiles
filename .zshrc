@@ -147,8 +147,8 @@ autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 
 # 補完機能強化
- zstyle ':chpwd:*' recent-dirs-max 200
- zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-max 200
+zstyle ':chpwd:*' recent-dirs-default true
 
 # 複数のファイルを一括でリネームする
 # zmv -W 'before' 'after'
@@ -169,8 +169,9 @@ function _update_vcs_info_msg() {
 }
 
 add-zsh-hook precmd _update_vcs_info_msg
+RPROMPT="%v"
 
-it [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
+if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   source $HOME/.zsh/antigen/antigen.zsh
   antigen bundle zsh-users/zsh-syntax-highlighting
   antigen apply
