@@ -7,3 +7,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export ANDOIRD_HOME=/usr/local/opt/android-sdu
 
 alias mvi="mvim --remote-tab-silent"
+
+# Java
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.8.0

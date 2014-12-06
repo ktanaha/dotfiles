@@ -171,8 +171,46 @@ function _update_vcs_info_msg() {
 add-zsh-hook precmd _update_vcs_info_msg
 RPROMPT="%v"
 
+# antigen
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   source $HOME/.zsh/antigen/antigen.zsh
   antigen bundle zsh-users/zsh-syntax-highlighting
   antigen apply
 fi
+
+# peco関連
+# コマンド履歴から実行する
+function peco-execute-history() {
+  local item
+  item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="$item"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+zle -N peco-execute-history
+bindkey '^x^r' peco-execute-history
+
+# 最近移動したディレクトリに移動する
+function peco-cdr() {
+  local item
+  item=$(cdr -l | sed 's/^[^ ]\{1,\} \{1,\}//' | peco)
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="cd -- $item"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+
+zle -N peco-cdr
+bindkey  '^xb' peco-cdr
+
+# anyframe
+antigen bundle mollifier/anyframe
