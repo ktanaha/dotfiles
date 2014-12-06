@@ -53,6 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+eval "$(rbenv init - zsh)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
