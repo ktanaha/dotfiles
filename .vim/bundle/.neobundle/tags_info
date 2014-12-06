@@ -14,6 +14,7 @@ unite.vim
 vim-css3-syntax
 vim-endwise
 vim-html5validator
+vim-indent-guides
 vim-markdown
 vim-multiple-cursors
 vim-quickrun

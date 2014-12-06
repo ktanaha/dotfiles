@@ -1,8 +1,9 @@
 "--------------------
 "" 基本的な設定
 "--------------------
-"Vimの機能をフルに発揮できるようにvi互換をオフする
-set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
+
 "バックスペースで文字を削除する
 set backspace=start,eol,indent
 "カーソル移動でも行をまたぐようにする
@@ -23,43 +24,30 @@ set incsearch
 set ignorecase
 "コマンドラインモードの補完表示
 set wildmenu wildmode=list:full
-
 "新しい行のインデントを現在行と同じにする
 set autoindent 
- 
 "バックアップファイルのディレクトリを指定する
 set backupdir=$HOME/vimbackup
- 
 " 不可視文字を表示
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
-
 " インデントをshiftwidthの倍数に丸める
 set shiftround
-
 " 補完の際の大文字小文字の区別しない
 set infercase
-
 " 文字がない場所にもカーソルを移動できるようにする
 set virtualedit=all
-
 " クリップボードをWindowsと連携する
 set clipboard=unnamed
-  
 "スワップファイル用のディレクトリを指定する
 set directory=$HOME/vimbackup
-
 "長い文章を切り返さない
 set nowrap
-
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
-
 " 対応括弧をハイライト表示する
 set showmatch
-
 " 対応括弧の表示秒数を3秒にする
 set matchtime=3
-
 "タブの代わりに空白文字を指定する
 set expandtab
 set tabstop=2
@@ -106,7 +94,14 @@ filetype indent on
 " originalrepos on github
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+\ 'build': {
+\ 'windows': 'make -f make_mingw32.mak',
+\ 'cygwin': 'make -f make_cygwin.mak',
+\ 'mac': 'make -f make_mac.mak',
+\ 'unix': 'make -f make_unix.mak',
+\ }
+\}
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
@@ -146,6 +141,11 @@ NeoBundleLazy 'basyura/unite-rails', {
 
 NeoBundle 'tpope/vim-endwise.git' " if...endなど対応するキーワードの自動補完
 NeoBundle 'ruby-matchit'  " %を拡張して、def...end等のキーワードを移動出来るようにする。
+
+" インデントに色を付けて見やすくする
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
 
 "NERDTree用の設定
 let file_name = expand("%:p")
