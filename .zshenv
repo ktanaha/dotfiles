@@ -13,9 +13,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export ANDOIRD_HOME=/usr/local/opt/android-sdu
 
 # Java
-<<<<<<< HEAD
-# export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.8.0
 export JAVA_HOME=$(/usr/libexec/java_home)
-=======
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.8.0
->>>>>>> eb7001441dc5cc44a09f3d2c56eb0037f78aad78
