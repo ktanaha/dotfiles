@@ -4,6 +4,8 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+"履歴の数
+set history=200
 "バックスペースで文字を削除する
 set backspace=start,eol,indent
 "カーソル移動でも行をまたぐようにする
@@ -141,6 +143,11 @@ NeoBundleLazy 'basyura/unite-rails', {
 
 NeoBundle 'tpope/vim-endwise.git' " if...endなど対応するキーワードの自動補完
 NeoBundle 'ruby-matchit'  " %を拡張して、def...end等のキーワードを移動出来るようにする。
+
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'grep.vim'
+NeoBundle 'drillbits/nyan-modoki.vim'
+
 
 " インデントに色を付けて見やすくする
 NeoBundle 'nathanaelkane/vim-indent-guides'

@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -141,6 +141,12 @@ alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# URLやHTMLをブラウザで開く
+autoload -Uz pick-web-browser
+alias -s html=pick-web-browser
+zstyle ':mime:*' x-browsers running chrome
+zstyle ':mime:*' browser-style running chrome
 
 # chrを使えるようにする
 autoload -Uz add-zsh-hook
