@@ -26,8 +26,6 @@ set incsearch
 set ignorecase
 "コマンドラインモードの補完表示
 set wildmenu wildmode=list:full
-"新しい行のインデントを現在行と同じにする
-set autoindent 
 "バックアップファイルのディレクトリを指定する
 set backupdir=$HOME/vimbackup
 " 不可視文字を表示
@@ -81,20 +79,28 @@ filetype off
 "-------------------------------------------------------
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
 endif
 
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+"neoBundle.vim自身でneoBundle.vimを管理する
 NeoBundleFetch 'Shougo/neobundle.vim'
+  
+call neobundle#end()
 
-filetype plugin indent on     " required!
-filetype indent on
+filetype plugin indent on
 
+"プラグインがインストールされているかどうかを確認する
+NeoBundleCheck
+
+".vimrcを読み込み直した場合の設定
+if !has('vim_staartinng')
+  call neobundle#call_hook('on_source')
+endif
 "-------------------------------------------------------
 
-" originalrepos on github
-"NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+"ヘルプを日本語表示する
+NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
 \ 'build': {
@@ -153,6 +159,9 @@ NeoBundle 'drillbits/nyan-modoki.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
+
+"ヘルプの日本語化
+set helplang=jp,en
 
 "NERDTree用の設定
 let file_name = expand("%:p")

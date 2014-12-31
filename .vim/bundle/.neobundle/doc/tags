@@ -33,7 +33,10 @@
 'indent_guides_space_guides'	indent_guides.txt	/*'indent_guides_space_guides'*
 'indent_guides_start_level'	indent_guides.txt	/*'indent_guides_start_level'*
 'loaded_nerd_tree'	NERD_tree.txt	/*'loaded_nerd_tree'*
+<<<<<<< HEAD
 :HTML5Validate	html5validator.txt	/*:HTML5Validate*
+=======
+>>>>>>> eb7001441dc5cc44a09f3d2c56eb0037f78aad78
 :IndentGuidesDisable	indent_guides.txt	/*:IndentGuidesDisable*
 :IndentGuidesEnable	indent_guides.txt	/*:IndentGuidesEnable*
 :IndentGuidesToggle	indent_guides.txt	/*:IndentGuidesToggle*
@@ -300,6 +303,7 @@ NERDTreeOptionSummary	NERD_tree.txt	/*NERDTreeOptionSummary*
 NERDTreeOptions	NERD_tree.txt	/*NERDTreeOptions*
 NERDTreeRender()	NERD_tree.txt	/*NERDTreeRender()*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
+<<<<<<< HEAD
 OpenBrowser()	openbrowser.txt	/*OpenBrowser()*
 OpenBrowserSearch()	openbrowser.txt	/*OpenBrowserSearch()*
 RequireFile	clojure.txt	/*RequireFile*
@@ -380,6 +384,9 @@ g:multi_cursor_quit_key	multiple_cursors.txt	/*g:multi_cursor_quit_key*
 g:multi_cursor_skip_key	multiple_cursors.txt	/*g:multi_cursor_skip_key*
 g:multi_cursor_start_key	multiple_cursors.txt	/*g:multi_cursor_start_key*
 g:multi_cursor_use_default_mapping	multiple_cursors.txt	/*g:multi_cursor_use_default_mapping*
+=======
+g:neobundle#cache_file	neobundle.txt	/*g:neobundle#cache_file*
+>>>>>>> eb7001441dc5cc44a09f3d2c56eb0037f78aad78
 g:neobundle#default_options	neobundle.txt	/*g:neobundle#default_options*
 g:neobundle#default_site	neobundle.txt	/*g:neobundle#default_site*
 g:neobundle#enable_name_conversion	neobundle.txt	/*g:neobundle#enable_name_conversion*
@@ -545,6 +552,7 @@ g:unite_source_history_yank_limit	unite.txt	/*g:unite_source_history_yank_limit*
 g:unite_source_line_enable_highlight	unite.txt	/*g:unite_source_line_enable_highlight*
 g:unite_source_menu_menus	unite.txt	/*g:unite_source_menu_menus*
 g:unite_source_neobundle_install_max_processes	neobundle.txt	/*g:unite_source_neobundle_install_max_processes*
+<<<<<<< HEAD
 g:unite_source_process_enable_confirm	unite.txt	/*g:unite_source_process_enable_confirm*
 g:unite_source_rec_async_command	unite.txt	/*g:unite_source_rec_async_command*
 g:unite_source_rec_git_command	unite.txt	/*g:unite_source_rec_git_command*
@@ -676,6 +684,8 @@ i_<Plug>(vimshell_zsh_complete)	vimshell.txt	/*i_<Plug>(vimshell_zsh_complete)*
 i_vimshell_default_key_mappings	vimshell.txt	/*i_vimshell_default_key_mappings*
 i_vimshell_int_default_key_mappings	vimshell.txt	/*i_vimshell_int_default_key_mappings*
 include_complete	neocomplcache.txt	/*include_complete*
+=======
+>>>>>>> eb7001441dc5cc44a09f3d2c56eb0037f78aad78
 indent-guides	indent_guides.txt	/*indent-guides*
 indent-guides-about	indent_guides.txt	/*indent-guides-about*
 indent-guides-changelog	indent_guides.txt	/*indent-guides-changelog*
@@ -687,6 +697,7 @@ indent-guides-mappings	indent_guides.txt	/*indent-guides-mappings*
 indent-guides-options	indent_guides.txt	/*indent-guides-options*
 indent-guides-terminal-vim	indent_guides.txt	/*indent-guides-terminal-vim*
 indent_guides.txt	indent_guides.txt	/*indent_guides.txt*
+<<<<<<< HEAD
 ji	clojure.txt	/*ji*
 jw	clojure.txt	/*jw*
 li	clojure.txt	/*li*
@@ -707,6 +718,8 @@ multiple-cursors-mappings	multiple_cursors.txt	/*multiple-cursors-mappings*
 multiple-cursors-references	multiple_cursors.txt	/*multiple-cursors-references*
 multiple-cursors-usage	multiple_cursors.txt	/*multiple-cursors-usage*
 mw	clojure.txt	/*mw*
+=======
+>>>>>>> eb7001441dc5cc44a09f3d2c56eb0037f78aad78
 neobundle	neobundle.txt	/*neobundle*
 neobundle#begin()	neobundle.txt	/*neobundle#begin()*
 neobundle#bundle()	neobundle.txt	/*neobundle#bundle()*
