@@ -232,6 +232,7 @@ neobundle-options-depends	neobundle.txt	/*neobundle-options-depends*
 neobundle-options-directory	neobundle.txt	/*neobundle-options-directory*
 neobundle-options-disabled	neobundle.txt	/*neobundle-options-disabled*
 neobundle-options-external_commands	neobundle.txt	/*neobundle-options-external_commands*
+neobundle-options-fetch	neobundle.txt	/*neobundle-options-fetch*
 neobundle-options-focus	neobundle.txt	/*neobundle-options-focus*
 neobundle-options-force	neobundle.txt	/*neobundle-options-force*
 neobundle-options-gui	neobundle.txt	/*neobundle-options-gui*

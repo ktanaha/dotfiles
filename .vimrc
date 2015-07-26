@@ -58,7 +58,7 @@ set smartindent
 
 "変更中のファイルでも、保存しないで他のファイルを表示する
 set hidden
-  
+
 "閉括弧が入力された時、対応する括弧を強調する
 set showmatch
 
@@ -94,8 +94,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 "neoBundle.vim自身でneoBundle.vimを管理する
 NeoBundleFetch 'Shougo/neobundle.vim'
-  
-call neobundle#end()
 
 filetype plugin indent on
 
@@ -163,11 +161,12 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'grep.vim'
 NeoBundle 'drillbits/nyan-modoki.vim'
 
-
 " インデントに色を付けて見やすくする
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
+
+call neobundle#end()
 
 "ヘルプの日本語化
 set helplang=jp,en
@@ -185,23 +184,23 @@ autocmd VimEnter * execute 'NERDTree'
 function! ExecuteNERDTree()
     "b:nerdstatus = 1 : NERDTree 表示中
     "b:nerdstatus = 2 : NERDTree 非表示中
- 
+
     if !exists('g:nerdstatus')
         execute 'NERDTree ./'
         let g:windowWidth = winwidth(winnr())
         let g:nerdtreebuf = bufnr('')
-        let g:nerdstatus = 1 
- 
-    elseif g:nerdstatus == 1 
+        let g:nerdstatus = 1
+
+    elseif g:nerdstatus == 1
         execute 'wincmd t'
-        execute 'vertical resize' 0 
+        execute 'vertical resize' 0
         execute 'wincmd p'
-        let g:nerdstatus = 2 
-    elseif g:nerdstatus == 2 
+        let g:nerdstatus = 2
+    elseif g:nerdstatus == 2
         execute 'wincmd t'
         execute 'vertical resize' g:windowWidth
-        let g:nerdstatus = 1 
- 
+        let g:nerdstatus = 1
+
     endif
 endfunction
 noremap <c-e> :<c-u>:call ExecuteNERDTree()<cr>
