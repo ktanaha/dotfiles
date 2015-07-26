@@ -205,12 +205,6 @@ function! ExecuteNERDTree()
 endfunction
 noremap <c-e> :<c-u>:call ExecuteNERDTree()<cr>
 
-"vimproc_mac.soのエラーがでるので追加
-if has('mac')
-  " let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
-  let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/vimproc_mac.so'
-endif
-
 " syntasticの設定
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'active_filetypes': [],

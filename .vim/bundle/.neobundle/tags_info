@@ -23,4 +23,5 @@ vim-multiple-cursors
 vim-quickrun
 vim-rails
 vimdoc-ja
+vimproc
 vimshell
