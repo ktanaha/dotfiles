@@ -8,3 +8,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export ANDOIRD_HOME=/usr/local/opt/android-sdu
 
 alias mvi="mvim --remote-tab-silent"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/moutoku1984/.sdkman"
+[[ -s "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh"

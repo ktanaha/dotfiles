@@ -287,6 +287,7 @@ NERDTreeAbout	NERD_tree.txt	/*NERDTreeAbout*
 NERDTreeAddKeyMap()	NERD_tree.txt	/*NERDTreeAddKeyMap()*
 NERDTreeAddMenuItem()	NERD_tree.txt	/*NERDTreeAddMenuItem()*
 NERDTreeAddMenuSeparator()	NERD_tree.txt	/*NERDTreeAddMenuSeparator()*
+NERDTreeAddPathFilter()	NERD_tree.txt	/*NERDTreeAddPathFilter()*
 NERDTreeAddSubmenu()	NERD_tree.txt	/*NERDTreeAddSubmenu()*
 NERDTreeBookmarkCommands	NERD_tree.txt	/*NERDTreeBookmarkCommands*
 NERDTreeBookmarkTable	NERD_tree.txt	/*NERDTreeBookmarkTable*
@@ -304,6 +305,7 @@ NERDTreeMenuAPI	NERD_tree.txt	/*NERDTreeMenuAPI*
 NERDTreeOptionDetails	NERD_tree.txt	/*NERDTreeOptionDetails*
 NERDTreeOptionSummary	NERD_tree.txt	/*NERDTreeOptionSummary*
 NERDTreeOptions	NERD_tree.txt	/*NERDTreeOptions*
+NERDTreePathListenerAPI	NERD_tree.txt	/*NERDTreePathListenerAPI*
 NERDTreeRender()	NERD_tree.txt	/*NERDTreeRender()*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
 OpenBrowser()	openbrowser.txt	/*OpenBrowser()*
@@ -332,6 +334,7 @@ ac_wrapPrefix	AutoClose.txt	/*ac_wrapPrefix*
 ac_wrapSelection	AutoClose.txt	/*ac_wrapSelection*
 aw	clojure.txt	/*aw*
 b:neocomplcache_sources_list	neocomplcache.txt	/*b:neocomplcache_sources_list*
+b:neosnippet_disable_snippet_triggers	neosnippet.txt	/*b:neosnippet_disable_snippet_triggers*
 b:quickrun_config	quickrun.txt	/*b:quickrun_config*
 buffer_complete	neocomplcache.txt	/*buffer_complete*
 clj-nailgun-server	clojure.txt	/*clj-nailgun-server*
@@ -582,7 +585,7 @@ g:unite_source_grep_default_opts	unite.txt	/*g:unite_source_grep_default_opts*
 g:unite_source_grep_encoding	unite.txt	/*g:unite_source_grep_encoding*
 g:unite_source_grep_recursive_opt	unite.txt	/*g:unite_source_grep_recursive_opt*
 g:unite_source_grep_search_word_highlight	unite.txt	/*g:unite_source_grep_search_word_highlight*
-g:unite_source_history_save_clipboard	unite.txt	/*g:unite_source_history_save_clipboard*
+g:unite_source_history_save_registers	unite.txt	/*g:unite_source_history_save_registers*
 g:unite_source_history_yank_enable	unite.txt	/*g:unite_source_history_yank_enable*
 g:unite_source_history_yank_file	unite.txt	/*g:unite_source_history_yank_file*
 g:unite_source_history_yank_limit	unite.txt	/*g:unite_source_history_yank_limit*
@@ -815,7 +818,6 @@ neobundle-options-name	neobundle.txt	/*neobundle-options-name*
 neobundle-options-overwrite	neobundle.txt	/*neobundle-options-overwrite*
 neobundle-options-recipe	neobundle.txt	/*neobundle-options-recipe*
 neobundle-options-regular_name	neobundle.txt	/*neobundle-options-regular_name*
-neobundle-options-resettable	neobundle.txt	/*neobundle-options-resettable*
 neobundle-options-rtp	neobundle.txt	/*neobundle-options-rtp*
 neobundle-options-script_type	neobundle.txt	/*neobundle-options-script_type*
 neobundle-options-site	neobundle.txt	/*neobundle-options-site*
@@ -1314,6 +1316,7 @@ unite-filter-attribute-filter	unite.txt	/*unite-filter-attribute-filter*
 unite-filter-attribute-name	unite.txt	/*unite-filter-attribute-name*
 unite-filter-attribute-pattern	unite.txt	/*unite-filter-attribute-pattern*
 unite-filter-attributes	unite.txt	/*unite-filter-attributes*
+unite-filter-converter_abbr_word	unite.txt	/*unite-filter-converter_abbr_word*
 unite-filter-converter_default	unite.txt	/*unite-filter-converter_default*
 unite-filter-converter_file_directory	unite.txt	/*unite-filter-converter_file_directory*
 unite-filter-converter_full_path	unite.txt	/*unite-filter-converter_full_path*
@@ -1339,6 +1342,7 @@ unite-filter-sorter_length	unite.txt	/*unite-filter-sorter_length*
 unite-filter-sorter_nothing	unite.txt	/*unite-filter-sorter_nothing*
 unite-filter-sorter_rank	unite.txt	/*unite-filter-sorter_rank*
 unite-filter-sorter_reverse	unite.txt	/*unite-filter-sorter_reverse*
+unite-filter-sorter_selecta	unite.txt	/*unite-filter-sorter_selecta*
 unite-filter-sorter_word	unite.txt	/*unite-filter-sorter_word*
 unite-filter-variables	unite.txt	/*unite-filter-variables*
 unite-filters	unite.txt	/*unite-filters*
@@ -1466,7 +1470,6 @@ unite-source-attribute-hooks-on_post_filter	unite.txt	/*unite-source-attribute-h
 unite-source-attribute-hooks-on_pre_filter	unite.txt	/*unite-source-attribute-hooks-on_pre_filter*
 unite-source-attribute-hooks-on_pre_init	unite.txt	/*unite-source-attribute-hooks-on_pre_init*
 unite-source-attribute-hooks-on_syntax	unite.txt	/*unite-source-attribute-hooks-on_syntax*
-unite-source-attribute-is_grouped	unite.txt	/*unite-source-attribute-is_grouped*
 unite-source-attribute-is_listed	unite.txt	/*unite-source-attribute-is_listed*
 unite-source-attribute-is_volatile	unite.txt	/*unite-source-attribute-is_volatile*
 unite-source-attribute-matchers	unite.txt	/*unite-source-attribute-matchers*

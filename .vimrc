@@ -80,6 +80,9 @@ set pumheight=10
 "インクリメントとデクリメントのキーマップ
 nnoremap + <C-a>
 nnoremap - <C-x>
+"バックスラッシュの入力を簡単にする
+noremap! ¥ \
+noremap! ¥ \
 
 filetype off
 
@@ -92,9 +95,6 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-"neoBundle.vim自身でneoBundle.vimを管理する
-NeoBundleFetch 'Shougo/neobundle.vim'
-
 filetype plugin indent on
 
 "プラグインがインストールされているかどうかを確認する
@@ -106,9 +106,8 @@ if !has('vim_staartinng')
 endif
 "-------------------------------------------------------
 
-"ヘルプを日本語表示する
-NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'Shougo/neobundle.vim'
+"neoBundle.vim自身でneoBundle.vimを管理する
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
 \ 'build': {
 \ 'windows': 'make -f make_mingw32.mak',
@@ -117,6 +116,8 @@ NeoBundle 'Shougo/vimproc', {
 \ 'unix': 'make -f make_unix.mak',
 \ }
 \}
+"ヘルプを日本語表示する
+NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
@@ -138,6 +139,10 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 "複数カーソル
 NeoBundle 'terryma/vim-multiple-cursors'
+"JavaScript
+NeoBundle 'pangloss/vim-javascript'
+"TypeScript
+NeoBundle 'leafgarland/typescript-vim'
 "RAILS用
 NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
@@ -220,5 +225,9 @@ let g:SimpleJsIndenter_CaseIndentLevel = -1
 "---Quick Run---"
 let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
-    \    'outputter': 'browser'
+    \    'outputter': 'browser',
+    \    'javascript': {
+    \       "command": "node",
+    \       "tempfile": "{tempname()}.js"
+    \    }
     \ }

@@ -11,6 +11,7 @@ nyan-modoki.vim
 open-browser.vim
 ruby-matchit
 scss-syntax.vim
+typescript-vim
 unite-rails
 unite.vim
 vim-autoclose
@@ -18,6 +19,7 @@ vim-css3-syntax
 vim-endwise
 vim-html5validator
 vim-indent-guides
+vim-javascript
 vim-markdown
 vim-multiple-cursors
 vim-quickrun
