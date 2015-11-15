@@ -123,11 +123,13 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 "コード入力補完
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete.vim'
 "スニペット機能
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'thinca/vim-quickrun'
 "HTML/CSS系
+NeoBundle 'othree/html5.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'hokaccha/vim-html5validator'
 NeoBundle 'mattn/emmet-vim'
@@ -139,8 +141,11 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 "複数カーソル
 NeoBundle 'terryma/vim-multiple-cursors'
+"ステータスラインに色を付ける
+NeoBundle 'itchyny/lightline.vim'
 "JavaScript
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'jelera/vim-javascript-syntax'
 "TypeScript
 NeoBundle 'leafgarland/typescript-vim'
 "RAILS用

@@ -2,8 +2,10 @@ VimClojure
 emmet-vim
 grep.vim
 html5.vim
+lightline.vim
 neobundle.vim
 neocomplcache
+neocomplete.vim
 neosnippet
 neosnippet-snippets
 nerdtree
@@ -20,6 +22,7 @@ vim-endwise
 vim-html5validator
 vim-indent-guides
 vim-javascript
+vim-javascript-syntax
 vim-markdown
 vim-multiple-cursors
 vim-quickrun
