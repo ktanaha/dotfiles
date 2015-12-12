@@ -1,3 +1,5 @@
+#シェルスクリプトとして実行した場合は読み込まれない
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -9,6 +11,10 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
+
+function zman() {
+  PAGER="less -g -s '+/^ {7}"$1"'" man zshall
+}
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -92,7 +98,8 @@ zstyle ':zle*' word-chars " /=;@:(){},|"
 zstyle ':zle*' word-style unspecified
 
 # プロンプトの表示を変更する
-PROMPT="[%n@%m](%*%) %~ %# "
+PROMPT="[%m@%n] %# "
+RPROMPT="%F{yellow}[%~@%*] %F{green}%v"
 
 # 設定を無効にする
 setopt IGNORE_EOF
@@ -114,21 +121,23 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # コマンド履歴
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt EXTENDED_HISTORY
+setopt hist_no_store
+setopt hist_expand
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey '^p' history-beginning-search-backward-end
+bindkey '^n' history-beginning-search-forward-end
+bindkey '^r' history-incremental-search-backward
+bindkey '^s' history-incremental-search-forward
 
-# コマンド履歴のインクリメンタル検索
-bindkey '^r' \
-  history-incremental-pattern-search-backward
-bindkey '^s' \
-  history-incremental-pattern-search-forward
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end \
-  history-search-end
-bindkey "^o" history-beginning-search-backward-end
-
-# vi keybind
-bindkey -v
+# emacs keybind
+bindkey -e
 
 # 便利なエイリアス達
 alias ls='ls -F'
@@ -176,7 +185,6 @@ function _update_vcs_info_msg() {
 }
 
 add-zsh-hook precmd _update_vcs_info_msg
-RPROMPT="%v"
 
 # antigen
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
