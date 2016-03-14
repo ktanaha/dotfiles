@@ -14,3 +14,6 @@ export ANDOIRD_HOME=/usr/local/opt/android-sdu
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
