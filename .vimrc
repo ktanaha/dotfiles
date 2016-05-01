@@ -61,6 +61,14 @@ set grepprg=grep\ -nh
 "検索結果のハイライトをEsc連打でクリアする
 nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
+"/を自動的にエスケープする
+cnoremap <expr> / getcmdtype() = '/' ? '\/' : '/'
+
+"jvgrepを有効にする
+if executable('jvgrep')
+  set grepprg=jvrep
+endif
+
 filetype off
 
 "-------------------------------------------------------
