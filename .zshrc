@@ -162,6 +162,42 @@ bindkey  '^xb' peco-cdr
 # anyframe
 antigen bundle mollifier/anyframe
 
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# vi vim
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim'
+alias vim='env_LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim"'
+alias mvim='env_LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim'
+
+# 新規で開くときにタブで開く
+alias mvi="mvim -p --remote-tab-silent" 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Android SDK
+export ANDOIRD_HOME=/usr/local/opt/android-sdu
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/moutoku1984/.sdkman"
 [[ -s "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh"
+
+# python
+PYENV_ROOT=~/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+#rbenvをインストールしたときに設定したもの
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+
+# AWS CLi
+export PATH=~/.local/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
