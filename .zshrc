@@ -30,7 +30,7 @@ zstyle ':zle*' word-chars " /=;@:(){},|"
 zstyle ':zle*' word-style unspecified
 
 # プロンプトの表示を変更する
-PROMPT="[%m@%n] %# "
+PROMPT="[%n] %# "
 RPROMPT="%F{yellow}[%~@%*] %F{green}%v"
 
 # 設定を無効にする
@@ -165,3 +165,10 @@ antigen bundle mollifier/anyframe
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/moutoku1984/.sdkman"
 [[ -s "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh"
+
+PYENV_ROOT=~/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }

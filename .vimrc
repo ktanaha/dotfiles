@@ -1,5 +1,5 @@
 set encoding=utf-8
-scriptencoding utf-8
+scriptencoding=utf-8
 
 "履歴の数
 set history=200
@@ -62,7 +62,7 @@ set grepprg=grep\ -nh
 nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "/を自動的にエスケープする
-cnoremap <expr> / getcmdtype() = '/' ? '\/' : '/'
+"cnoremap <expr> / getcmdtype() = '/' ? '\/' : '/'
 
 "jvgrepを有効にする
 if executable('jvgrep')
