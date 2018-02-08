@@ -177,5 +177,5 @@ export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Visual Stdio Code
+# Visual Stdio
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
