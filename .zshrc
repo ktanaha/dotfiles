@@ -179,3 +179,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Visual Stdio
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
+
+# Rust
+source $HOME/.cargo/env
