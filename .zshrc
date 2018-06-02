@@ -30,7 +30,7 @@ zstyle ':zle*' word-chars " /=;@:(){},|"
 zstyle ':zle*' word-style unspecified
 
 # プロンプトの表示を変更する
-PROMPT="[%m@%n] %# "
+PROMPT="[%n] %# "
 RPROMPT="%F{yellow}[%~@%*] %F{green}%v"
 
 # 設定を無効にする
@@ -168,23 +168,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-# vi vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim'
-alias vim='env_LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim"'
-alias mvim='env_LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim'
-
-# 新規で開くときにタブで開く
-alias mvi="mvim -p --remote-tab-silent" 
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-### Android SDK
-export ANDOIRD_HOME=/usr/local/opt/android-sdu
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/moutoku1984/.sdkman"
-[[ -s "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/moutoku1984/.sdkman/bin/sdkman-init.sh"
 
 # python
 PYENV_ROOT=~/.pyenv
@@ -192,21 +177,11 @@ export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-#rbenvをインストールしたときに設定したもの
-if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
-
-# VS CODE
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
-
 # AWS CLi
 export PATH=~/.local/bin:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/user/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/user/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/user/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/user/.nvm/versions/node/v6.10.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# Visual Stdio
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
+
+# Rust
+source $HOME/.cargo/env
