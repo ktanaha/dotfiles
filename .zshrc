@@ -15,9 +15,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-eval "$(rbenv init - zsh)"
-
 # original config
 setopt SHARE_HISTORY
 setopt AUTO_CD
@@ -163,13 +160,17 @@ bindkey  '^xb' peco-cdr
 antigen bundle mollifier/anyframe
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# ruby rails
+export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
+eval "$(rbenv init -)"
 
 # python
 PYENV_ROOT=~/.pyenv
@@ -185,3 +186,23 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
 
 # Rust
 source $HOME/.cargo/env
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# golang
+bindkey '^]' peco-src
+function peco-src() {
+  local src=$(ghq list --full-path | peco --query "$LBUFFER")
+  if [ -n "$src" ]; then
+    BUFFER="cd $src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+
+zle -N peco-src
