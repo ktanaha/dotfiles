@@ -13,3 +13,6 @@ ln -sv ~/dotfiles/<ファイル名> ~/
 ## vim-plug
 
 https://github.com/junegunn/vim-plug
+https://github.com/ntk148v/vim-horizon
+https://github.com/preservim/nerdtree
+https://github.com/junegunn/fzf
