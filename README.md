@@ -1,10 +1,15 @@
 dotfiles
 ========
 
-## READ ME
+# READ ME
 
+dotfile管理用のリポジトリ
 
-・git勉強用
-・macで共有するために作成したリポジトリ
-　- test test
+# シンボリックリンク
+ln -sv ~/dotfiles/<ファイル名> ~/
 
+# 使っているツール
+
+## vim-plug
+
+https://github.com/junegunn/vim-plug
