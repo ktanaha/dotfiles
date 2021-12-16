@@ -1,10 +1,25 @@
-set shell=/bin/zsh #コマンドの際にはzshを使う
-set shiftwidth=4 #indentの幅
-set tabstop=4 #タブで変換されるサイズ
-set expandtab #タブ入力時にスペースに変換
-set textwidth=0 #ワードラッピングなし
-set autoindent #自動インデント （:set pasteで解除可能）
-set hlsearch #Searchのハイライト
-set clipboard=unnamed #クリップボードへの登録
+set shell=/bin/zsh 
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set textwidth=0
+set autoindent
+set hlsearch
+set clipboard=unnamed
+syntax on
+    
+call plug#begin()
+Plug 'ntk148v/vim-horizon'
+call plug#end()
 
-syntax on #Syntaxを有効化
+" if you don't set this option, this color might not correct
+set termguicolors
+
+colorscheme horizon
+
+" lightline
+let g:lightline = {}
+let g:lightline.colorscheme = 'horizon'
+
+" or this line
+let g:lightline = {'colorscheme' : 'horizon'}
