@@ -19,3 +19,4 @@ https://github.com/junegunn/fzf
 https://github.com/tpope/vim-fugitive
 https://github.com/airblade/vim-gitgutter
 https://github.com/tpope/vim-commentary
+https://github.com/sheerun/vim-polyglot

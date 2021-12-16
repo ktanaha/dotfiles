@@ -12,6 +12,7 @@ call plug#begin()
 Plug 'ntk148v/vim-horizon'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " if you don't set this option, this color might not correct
