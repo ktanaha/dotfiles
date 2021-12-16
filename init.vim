@@ -11,6 +11,7 @@ syntax on
 call plug#begin()
 Plug 'ntk148v/vim-horizon'
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 " if you don't set this option, this color might not correct
@@ -26,3 +27,5 @@ let g:lightline.colorscheme = 'horizon'
 let g:lightline = {'colorscheme' : 'horizon'}
 
 nnoremap <C-n> :NERDTree<CR>
+
+let g:gitgutter_highlight_lines = 1
