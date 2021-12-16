@@ -16,3 +16,6 @@ https://github.com/junegunn/vim-plug
 https://github.com/ntk148v/vim-horizon
 https://github.com/preservim/nerdtree
 https://github.com/junegunn/fzf
+https://github.com/tpope/vim-fugitive
+https://github.com/airblade/vim-gitgutter
+https://github.com/tpope/vim-commentary
