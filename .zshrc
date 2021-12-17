@@ -1,72 +1,120 @@
-#シェルスクリプトとして実行した場合は読み込まれない
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export LANG=ja_JP.UTF-8
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/tanahashitakashi/.oh-my-zsh"
 
-export ZSH=$HOME/.oh-my-zsh
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-CASE_SENSITIVE="true"
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-function zman() {
-  PAGER="less -g -s '+/^ {7}"$1"'" man zshall
-}
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# original config
-setopt SHARE_HISTORY
-setopt AUTO_CD
-setopt AUTO_PUSHD
+# User configuration
 
-# <C-w>を単語区切りにする
-autoload -Uz select-word-style
-select-word-style default
-zstyle ':zle*' word-chars " /=;@:(){},|"
-zstyle ':zle*' word-style unspecified
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# プロンプトの表示を変更する
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+# プロンプトの設定
 PROMPT="[%n] %# "
 RPROMPT="%F{yellow}[%~@%*] %F{green}%v"
 
-# 設定を無効にする
-setopt IGNORE_EOF
-setopt NO_FLOW_CONTROL
-setopt NO_BEEP
-
-# Homebrewでインストールしたzsh-completionsを使えるようにする
-fpath=(/usr/local/share/zsh_completions(N-/) ${fpath})
-
-# 補完機能
-autoload -Uz compinit
-compinit
-
-# 補完機能のメニュー選択モード
-zstyle ':completion:*:default' menu select=2
-
-# 大文字小文字を区別しない
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+setopt no_beep
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt auto_cd
+setopt hist_ignore_dups
+setopt share_history
+setopt inc_append_history
 
 # コマンド履歴
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_dups
-setopt hist_save_no_dups
-setopt EXTENDED_HISTORY
-setopt hist_no_store
-setopt hist_expand
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey '^p' history-beginning-search-backward-end
-bindkey '^n' history-beginning-search-forward-end
-bindkey '^r' history-incremental-search-backward
-bindkey '^s' history-incremental-search-forward
-
-# emacs keybind
-bindkey -e
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 # 便利なエイリアス達
 alias ls='ls -F'
@@ -80,129 +128,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# URLやHTMLをブラウザで開く
-autoload -Uz pick-web-browser
-alias -s html=pick-web-browser
-zstyle ':mime:*' x-browsers running chrome
-zstyle ':mime:*' browser-style running chrome
+# NeoVim
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -R"
 
-# chrを使えるようにする
-autoload -Uz add-zsh-hook
-autoload -Uz chpwd_recent_dirs cdr
-add-zsh-hook chpwd chpwd_recent_dirs
-
-# 補完機能強化
-zstyle ':chpwd:*' recent-dirs-max 200
-zstyle ':chpwd:*' recent-dirs-default true
-
-# 複数のファイルを一括でリネームする
-# zmv -W 'before' 'after'
-autoload -Uz zmv
-alias zmv='noglob zmv -W'
-
-# vcs_infoの設定
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' formats '(%s)-[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-
-function _update_vcs_info_msg() {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  psvar[1]="$vcs_info_msg_0_"
-}
-
-add-zsh-hook precmd _update_vcs_info_msg
-
-# antigen
-if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
-  source $HOME/.zsh/antigen/antigen.zsh
-  antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen apply
-fi
-
-# peco関連
-# コマンド履歴から実行する
-function peco-execute-history() {
-  local item
-  item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
-
-  if [[ -z "$item" ]]; then
-    return 1
-  fi
-
-  BUFFER="$item"
-  CURSOR=$#BUFFER
-  zle accept-line
-}
-zle -N peco-execute-history
-bindkey '^x^r' peco-execute-history
-
-# 最近移動したディレクトリに移動する
-function peco-cdr() {
-  local item
-  item=$(cdr -l | sed 's/^[^ ]\{1,\} \{1,\}//' | peco)
-
-  if [[ -z "$item" ]]; then
-    return 1
-  fi
-
-  BUFFER="cd -- $item"
-  CURSOR=$#BUFFER
-  zle accept-line
-}
-
-zle -N peco-cdr
-bindkey  '^xb' peco-cdr
-
-# anyframe
-antigen bundle mollifier/anyframe
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# ruby rails
-export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
-
-# python
-PYENV_ROOT=~/.pyenv
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# AWS CLi
-export PATH=~/.local/bin:$PATH
-
-# Visual Stdio
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
-
-# Rust
-source $HOME/.cargo/env
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/user/.nodebrew/node/v5.4.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-# golang
-bindkey '^]' peco-src
-function peco-src() {
-  local src=$(ghq list --full-path | peco --query "$LBUFFER")
-  if [ -n "$src" ]; then
-    BUFFER="cd $src"
-    zle accept-line
-  fi
-  zle -R -c
-}
-
-zle -N peco-src
