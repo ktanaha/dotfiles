@@ -1,6 +1,3 @@
-dotfiles
-========
-
 # READ ME
 
 dotfile管理用のリポジトリ
